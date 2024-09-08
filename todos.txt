@@ -1,0 +1,3 @@
+Monthly and yearly expense reports
+Updating and deleting expenses and categories
+Error handling and input validation
