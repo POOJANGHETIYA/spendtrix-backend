@@ -18,9 +18,9 @@ exports.register = async (req, res) => {
 
     if(userError) throw userError;
 
-    res.status(201).json({ message: 'User registered successfully', user: data.user });
+    res.status(201).json({ success:true, message: 'User registered successfully', user: data.user });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({success:false, error: error.message });
   }
 };
 
@@ -35,8 +35,8 @@ exports.login = async (req, res) => {
 
     if (error) throw error;
 
-    res.status(200).json({ message: 'Login successful', user: data.user, token: data.session.access_token });
+    res.status(200).json({success:true, message: 'Login successful', user: data.user, token: data.session.access_token });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ success:false,error: error.message });
   }
 };
